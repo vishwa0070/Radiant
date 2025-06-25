@@ -1,0 +1,197 @@
+/* --- Base Styling --- */
+.about-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom right, #f6f9fc, #e8f5e9);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin-top: 50px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: slideInLeft 1s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about-text {
+  max-width: 600px;
+  animation: slideInRight 1s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* --- Why Radiant Section --- */
+.why-radiant {
+  margin-top: 80px;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.why-radiant h3 {
+  font-size: 2rem;
+  color: #1b5e20;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.why-radiant h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #66bb6a;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.why-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* --- Card Hover Effects with Animation --- */
+.why-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 300px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  cursor: pointer;
+  animation: fadeInScale 1s ease;
+}
+
+@keyframes fadeInScale {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.why-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: #e8f5e9;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.why-card .icon {
+  font-size: 2.5rem;
+  color: #43a047;
+  margin-bottom: 16px;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.why-card:hover .icon {
+  transform: rotate(10deg) scale(1.2);
+  color: #2e7d32;
+}
+
+.why-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #2e7d32;
+}
+
+.why-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .why-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

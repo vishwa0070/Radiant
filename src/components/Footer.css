@@ -1,0 +1,26 @@
+.footer {
+  background-color: #eddc99;;
+  color: #3d3c3c;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-top: 4px solid #8c8893;
+}
+
+.footer .disclaimer-list {
+  text-align: left;
+  display: inline-block;
+  margin: 1rem auto;
+  padding-left: 1.5rem;
+  max-width: 800px;
+}
+
+.footer .disclaimer-list li {
+  margin-bottom: 0.8rem;
+}
+
+.footer p:last-of-type {
+  margin-top: -1rem;
+  color: #0a0a0a;
+}

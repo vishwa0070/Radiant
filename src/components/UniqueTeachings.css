@@ -1,0 +1,101 @@
+.unique-teachings {
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+}
+
+.box-container {
+  background-color: #ebe5b6;;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.box-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.box-container .subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.teachings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.teaching-card {
+  background-color: #e4f1d9;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teaching-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.teaching-card .icon {
+  font-size: 2.5rem;
+  color: #7b3fe4;
+  margin-bottom: 1rem;
+}
+
+.teaching-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.teaching-card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.youtube-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.youtube-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
