@@ -4,6 +4,7 @@ html, body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* Slider Container */
@@ -17,7 +18,7 @@ html, body {
 /* Slider Track (All slides in row) */
 .slider-track {
   display: flex;
-  width: 300%; /* Adjust based on number of slides (100% * number of slides) */
+  width: 300%;
   animation: slide 10s infinite ease-in-out;
 }
 
@@ -27,6 +28,7 @@ html, body {
   height: 100vh;
   flex-shrink: 0;
   position: relative;
+  animation: fadeIn 1.5s ease both;
 }
 
 /* Image Styling */
@@ -34,6 +36,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  animation: floatIn 2s ease-in-out both;
 }
 
 /* Overlay Text */
@@ -41,7 +44,7 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.95);
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1.5rem 2rem;
   border-radius: 12px;
@@ -50,15 +53,24 @@ html, body {
   text-align: center;
   max-width: 90%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: overlayFadeZoom 1.8s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
 
 .slide-text-overlay h1 {
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0;
+  animation: bounceIn 1s ease forwards;
 }
 
-/* Animation Keyframes */
+/* Hover bounce */
+.slide-text-overlay h1:hover {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* === Animations === */
 @keyframes slide {
   0% { transform: translateX(0%); }
   33.333% { transform: translateX(0%); }
@@ -70,6 +82,33 @@ html, body {
   99.999% { transform: translateX(-200%); }
 
   100% { transform: translateX(0%); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: scale(1.1) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes overlayFadeZoom {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
 }
 
 /* Tablet Responsive */
